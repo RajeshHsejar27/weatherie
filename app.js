@@ -29,7 +29,7 @@ app.post("/",function(req,res){
       const wedata1 = JSON.stringify(weatherData);
       const icon = weatherData.weather[0].icon;
       const imgUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-const c=wedata.main.temp-273.15;
+      const c = weatherData.main.temp-273.15;
 
       res.write("<p><h1 align=center>the weather condition in "+query+" is : " +
           weatherData.weather[0].description +
