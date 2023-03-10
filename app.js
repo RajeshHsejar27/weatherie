@@ -17,15 +17,15 @@ app.get("/",function(req,res){
 app.post("/",function(req,res){
     
     const query=req.body.cityname;
- const url ="https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid="+process.env.APPID;
+ const url ="https://api.openweathermap.org/data/2.5/weather?q="+query+process.env.APPID;
 
     //insert ur app id from ur openweather account
 
   https.get(url, function (response) {
-    
+     console.log(response.statusCode);
 
     response.on("data", function (data) {
-      const wedata = JSON.parse(data);
+      const weatherData = JSON.parse(data);
       const wedata1 = JSON.stringify(wedata);
       const icon = wedata.weather[0].icon;
       const imgUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
