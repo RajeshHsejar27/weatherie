@@ -13,8 +13,7 @@ app.get("/",function(req,res){
 app.post("/",function(req,res){
     
     const query=req.body.cityname;
- const url =
-    "https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid=somestuff";
+ const url =APPID;
 
 //insert ur app id from ur openweather account
 
